@@ -1,0 +1,33 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="ar" class="h-100" dir="rtl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>متجر كتب</title>
+        <script defer src="{% static 'js/830.daa13868.js' %}"></script>
+        <script defer src="{% static 'js/app.0934495a.js' %}"></script>
+        <link href="{% static 'css/830.css' %}" rel="stylesheet">
+        <link href="{% static 'css/app.css' %}" rel="stylesheet">
+    </head>
+
+  <body class="d-flex flex-column h-100 bg-light">
+    {% include "parts/header.html" %}
+
+    <main>
+
+
+      {% block content %}
+
+      {% endblock content %}
+     
+    </main>
+
+    {% include "parts/footer.html" %}
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>

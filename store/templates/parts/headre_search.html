@@ -1,0 +1,24 @@
+{% load i18n %}
+<form action="{% url 'category' %}" class="d-flex mx-auto">
+    <div class="input-group">
+      <input
+        name = 'query'
+        type="text"
+        class="form-control"
+        style="width: 400px"
+        value = "{{request.GET.query}}"     
+        placeholder = "{% trans "search" %}"
+      />
+      <select class="form-control" style="width: 160px" name='category'>
+        <option>{% trans "All categories" %}</option>
+        {% for category in caterories %}
+          <option value="{{category.id}}" {% if category.id|stringformat:'i' == request.GET.category %} selected {% endif %}>
+            {{category.name}}
+          </option>
+        {% endfor %}
+      </select>
+      <button class="btn btn-primary" type="submit">
+        <i class="lni lni-search-alt text-white"></i>
+      </button>
+    </div>
+  </form>
